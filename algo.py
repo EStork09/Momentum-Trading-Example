@@ -36,7 +36,7 @@ def get_1000m_history_data(symbols):
     c = 0
     for symbol in symbols:
         minute_history[symbol] = api.polygon.historic_agg_v2(
-            timespan="minute", symbol=symbol, limit=1000
+            timespan="minute", symbol=symbol, limit=1000, _from='2020-06-26', to='2020-06-26', multiplier=1
         ).df
         c += 1
         print('{}/{}'.format(c, len(symbols)))

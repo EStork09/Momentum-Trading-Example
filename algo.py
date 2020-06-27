@@ -35,7 +35,7 @@ def get_1000m_history_data(symbols):
     minute_history = {}
     c = 0
     for symbol in symbols:
-        minute_history[symbol] = api.polygon.historic_agg(
+        minute_history[symbol] = api.polygon.historic_agg_v2(
             size="minute", symbol=symbol, limit=1000
         ).df
         c += 1
